@@ -1,11 +1,7 @@
 
 function App() {
   return (
-    <div>
-        <p>
-          Hello world
-        </p>
-    </div>
+    <input type="text" onChange={() => {console.log('I am clicked')}} />
   );
 }
 
