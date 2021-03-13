@@ -1,8 +1,19 @@
+import { render } from "@testing-library/react";
 
 function App() {
   return (
-    <input type="text" onChange={() => {console.log('I am clicked')}} />
+    <div>
+      <Meow />
+      <Meow />
+      <Meow />
+      <Meow />
+    </div>
   );
+}
+
+const Meow = () => {
+     return <div>Meow</div>
+    
 }
 
 export default App;
