@@ -1,42 +1,38 @@
-// import { render } from "@testing-library/react";
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
 
-function App() {
-  const profiles = [
+const App = () => (<Counter></Counter> );
 
-    {
-      name: "Taro",
-      age: 10
-    },
+class Counter extends Component {
+  constructor(props) {
+    super(props)
+    console.log(this.state)
+    this.state = {count: 0}
+  }
 
-    {
-      name: "Hokuto",
-      age: 24
-    },
-
-  ]
-  return (
-
-    <div>
-        {
-          profiles.map((profile, index) => {
-            return <User name={profile.name} age={profile.age} key={index} />
-          })
-        }
-      </div>
-    );
-
-}
-
-const User = (props) => {
-     return <div>This is {props.name}, and I am {props.age} years old.</div>
-    
-}
-
-User.propTypes = {
-  name: PropTypes.string,
-  age: PropTypes.number,
   
+  hundlePlusButton = () =>  {
+
+    this.setState({count: this.state.count + 1});
+
+  }
+
+  hundleMinusButton = () => {
+
+    this.setState({count: this.state.count - 1});
+
+  }
+
+    render() {
+      return(
+        <React.Fragment>
+          <div>Counter {this.state.count}</div>
+          <button onClick={this.hundlePlusButton} >+1</button>
+          <button onClick={this.hundleMinusButton}>-1</button>
+        </React.Fragment>
+        
+      )
+    }
+    
 }
 
 export default App;
